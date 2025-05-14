@@ -36,7 +36,7 @@
 
 #define THINGSPEAK_URL_MAX_LENGTH  80
 
-#define THINGSPEAK_WRITE_API_KEY   "1LQH82DIQIIJHFRQ"
+#define THINGSPEAK_WRITE_API_KEY   ""
 
 static K_SEM_DEFINE(wifi_connected, 0, 1);
 static K_SEM_DEFINE(ipv4_address_obtained, 0, 1);
