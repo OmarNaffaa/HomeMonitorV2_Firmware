@@ -1,0 +1,29 @@
+/*
+ * Copyright (c) 2019 Nordic Semiconductor ASA
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/ {
+    aliases {
+        /* Assign dht0 alias to our defined DHT sensor node */
+        dht0 = &dht_sensor;
+    };
+
+    /* Define the DHT sensor node */
+    dht_sensor: dht_sensor {
+        compatible = "aosong,dht";
+        label = "DHT_SENSOR";
+
+        /* Specify the GPIO pin connection and enable the pull-up */
+		dio-gpios = <&gpio0 15 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+		dht22;
+
+        /* Enable the device */
+        status = "okay";
+    };
+};
+
+&wifi {
+	status = "okay";
+};
